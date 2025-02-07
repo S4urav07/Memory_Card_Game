@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Card Match</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <h1>Memory Card Match Game</h1>
+
+    <label for="difficulty">Difficulty: </label>
+    <select id="difficulty" onchange="startGame()">
+        <option value="easy">Easy</option>
+        <option value="medium">Medium</option>
+        <option value="hard">Hard</option>
+    </select>
+
+    <label for="theme">Theme: </label>
+    <select id="theme" onchange="startGame()">
+        <option value="emojis">Emojis</option>
+        <option value="letters">Letters</option>
+        <option value="animals">Animals</option>
+    </select>
+
+    <div id="game-board"></div>
+
+    <div id="timer">Time: 0s</div>
+    <div id="score">Score: 0</div>
+
+    <button onclick="startGame()">Restart</button>
+
+    <audio id="flipSound" src="music/flip.m4a"></audio>
+    <audio id="matchSound" src="music/match.m4a"></audio>
+
+</body>
+</html>
