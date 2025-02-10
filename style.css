@@ -5,13 +5,21 @@ body {
     margin: 0;
     padding: 0;
 }
+
+h1 {
+    color: #333;
+}
+
 #game-board {
     display: grid;
+    grid-template-columns: repeat(4, 100px); /* 4x4 grid */
     gap: 10px;
     justify-content: center;
-    margin-top: 20px;
+    align-items: center;
+    margin: 20px auto;
     transition: opacity 0.3s ease-in-out;
 }
+
 .card {
     width: 100px;
     height: 100px;
@@ -26,27 +34,43 @@ body {
     transition: transform 0.5s ease, background-color 0.3s ease;
     transform-style: preserve-3d;
 }
+
 .card.flipped {
     background-color: #fff;
     color: #333;
     transform: rotateY(180deg);
 }
-.matched {
-    background-color: #8f8 !important;
-    cursor: default;
-    animation: pulse 0.5s ease;
+
+/* Matched card effect */
+.card.matched {
+    animation: pulse 0.5s ease-in-out;
 }
+
 @keyframes pulse {
     0% { transform: scale(1); }
     50% { transform: scale(1.1); }
     100% { transform: scale(1); }
 }
-select, button {
-    margin-top: 20px;
-    padding: 10px;
+
+/* Button styling */
+button {
+    margin-top: 15px;
+    padding: 12px 24px;
     font-size: 16px;
+    cursor: pointer;
+    background-color: #008CBA;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background 0.3s ease;
 }
+
+button:hover {
+    background-color: #005f73;
+}
+
 #timer, #score {
     margin-top: 20px;
     font-size: 20px;
+    font-weight: bold;
 }
